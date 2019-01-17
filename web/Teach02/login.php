@@ -6,7 +6,10 @@
 	</head>
 
 	<body>
-		<?php include 'header.php';?>
+		<?php
+			$page = $_SERVER['PHP_SELF'];
+			include 'header.php';
+		?>
 		<a href="">Login as Administrator</a>
 		<a href="">Login as Tester</a>
 	</body>

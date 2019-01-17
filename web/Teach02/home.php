@@ -6,7 +6,10 @@
 	</head>
 
 	<body>
-		<?php include 'header.php';?>
+		<?php
+			$page = $_SERVER['PHP_SELF'];
+			include 'header.php';
+		?>
 		<p>This is the homepage</p>
 	</body>
 
