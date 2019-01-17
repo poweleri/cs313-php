@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>Not Clearly Enough</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 
 	<body>
