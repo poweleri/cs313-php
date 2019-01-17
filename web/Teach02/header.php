@@ -1,5 +1,6 @@
 <div>
-	<?php 
+	<?php
+		echo "$page"; 
 		echo "<h1>Not Clearly Enough</h1>";
 		if($page == "home.php") {
 			echo "<a href='home.php' style=\"text-weight: bold;\">Home</a>
