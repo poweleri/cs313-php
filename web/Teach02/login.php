@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -10,8 +13,9 @@
 			$page = $_SERVER['PHP_SELF'];
 			include 'header.php';
 		?>
-		<a href="">Login as Administrator</a>
-		<a href="">Login as Tester</a>
+		<a href="signin.php?user=admin">Login as Administrator</a>
+		<a href="signin.php?user=tester">Login as Tester</a>
+
 	</body>
 
 

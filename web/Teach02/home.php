@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -11,6 +14,17 @@
 			include 'header.php';
 		?>
 		<p>This is the homepage</p>
+		<div>
+			<?php
+				if($_SESSION["user"] == admin){
+					echo "<p>Welcome Supreme Overlord and Master</p>"
+				} elseif($_SESSION["user"] == tester){
+					echo "<p>I promise there are no bugs on this page</p>"
+				} else {
+					echo "<p>Welcome Anon, Please don't break my page </p>"
+				}
+			?>
+		</div>
 	</body>
 
 
