@@ -3,8 +3,8 @@ session_start();
 ?>
 
 <?php
-	session_unset()
-	
+	session_unset();
+
 	if ($_GET["user"] = admin)
 		$_SESSION["user"] = admin;
 	elseif($_GET["user"] = tester)
