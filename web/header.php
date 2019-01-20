@@ -1,6 +1,7 @@
 <div class="container-fluid">
 	<div class="row">
 		<?php
+		    echo "<br/>";
 			if ($page == '/about-me.php') {
 				echo "<a class=\"col\" href\"/index.php\">Homepage</a>
 				      <h3 class=\"col\">About Me</h3>
@@ -15,7 +16,7 @@
 				      <a class=\"col\" href\"/about-me.php\">About Me</a>
 				      <a class=\"col\" href\"/assignments.php\">Assignments</a>";
 			}
-
+		    echo "<br/>";
 		?>
 	</div>
 </div>
