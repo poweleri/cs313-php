@@ -15,15 +15,17 @@
 </head>
 
 <body>
-	<div class="jumbotron">
-		<h2>Welcome to this Homepage</h2>
-	</div>
+	<?php
+		$page = $_SERVER['PHP_SELF'];		 
+		require header.php; 
+	?>
 	<img class="rounded mx-auto d-block" src="http://images.fineartamerica.com/images/artworkimages/mediumlarge/1/mount-rainier-over-puget-sound-greg-hjellen.jpg" alt="Mount Rainer Over the Puget Sound"/>
+	<br/>
 	<div class="container">
-		<ul class="row">
-			<li class="col"><a href="assignments.php">Assignments</a></li>
-			<li class="col"><a href="about-me.php">About Me</a></li>
-		</ul>
+		<div class="row">
+			<p class="col"><a href="assignments.php">Assignments</a></p>
+			<p class="col"><a href="about-me.php">About Me</a></p>
+		</div>
 	</div>
 </body>
 

@@ -8,5 +8,6 @@ body {
 
 .container {
 	background-color: rgba(153, 255, 204, .45);
-
+	text-align: center;
 }
+

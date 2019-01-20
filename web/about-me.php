@@ -14,10 +14,17 @@
 </head>
 
 <body>
+	<?php
+		$page = $_SERVER['PHP_SELF'];		 
+		require header.php; 
+	?>
+	<img class="rounded mx-auto d-block" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Ferry_Wenatchee_enroute_to_Bainbridge_Island_WA.jpg/1200px-Ferry_Wenatchee_enroute_to_Bainbridge_Island_WA.jpg"/>
 	<div class="container">
-		<img src="http://images.fineartamerica.com/images/artworkimages/mediumlarge/1/mount-rainier-over-puget-sound-greg-hjellen.jpg";/>
+		
 		
 		<ul>
+			<li>I love my major of Computer Science!</li>
+			<li>Video games are a passion of mine</li>
 		</ul>
 	</div>
 </body>
