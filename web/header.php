@@ -1,5 +1,5 @@
+<br/>
 <div class="container-fluid">
-	<br/>
 	<div class="row">
 		<?php
 			if ($page == '/about-me.php') {
@@ -18,5 +18,5 @@
 			}
 		?>
 	</div>
-	<br/>
 </div>
+<br/>
