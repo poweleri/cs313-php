@@ -1,6 +1,7 @@
 <div class="container-fluid">
 	<div class="row">
 		<?php
+			echo "<p>$page</p>"
 			if ($page == 'about-me.php') {
 				echo "<a class=\"col\" href\"index.php\">Homepage</a>
 				      <h3 class=\"col\">About Me</h3>
