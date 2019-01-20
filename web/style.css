@@ -2,11 +2,7 @@ body {
 	background-color: #71aea7;
 }
 
-.jumbotron {
-	text-align: center;
-}
-
-.container {
+.container, .container-fluid {
 	background-color: rgba(153, 255, 204, .45);
 	text-align: center;
 }
