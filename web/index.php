@@ -16,8 +16,10 @@
 <body>
 	<div class="container">
 		<h2>Welcome to this Homepage</h2>
-		<a href="assignments.php"/>
-		<a href="about-me.php"/>
+		<ul>
+			<li><a href="assignments.php">Assignments</a></li>
+			<li><a href="about-me.php">About Me</a></li>
+		</ul>
 	</div>
 </body>
 
