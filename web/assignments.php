@@ -16,7 +16,7 @@
 <body>
 	<?php
 		$page = $_SERVER['PHP_SELF'];		 
-		require header.php; 
+		require 'header.php'; 
 	?>
 	<div class="container">
 		<p>Coming Soon</p>

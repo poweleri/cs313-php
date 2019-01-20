@@ -17,7 +17,7 @@
 <body>
 	<?php
 		$page = $_SERVER['PHP_SELF'];		 
-		require header.php; 
+		require 'header.php'; 
 	?>
 	<img class="rounded mx-auto d-block" src="http://images.fineartamerica.com/images/artworkimages/mediumlarge/1/mount-rainier-over-puget-sound-greg-hjellen.jpg" alt="Mount Rainer Over the Puget Sound"/>
 	<br/>

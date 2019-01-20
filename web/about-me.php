@@ -16,7 +16,7 @@
 <body>
 	<?php
 		$page = $_SERVER['PHP_SELF'];		 
-		require header.php; 
+		require 'header.php'; 
 	?>
 	<img class="rounded mx-auto d-block" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Ferry_Wenatchee_enroute_to_Bainbridge_Island_WA.jpg/1200px-Ferry_Wenatchee_enroute_to_Bainbridge_Island_WA.jpg"/>
 	<div class="container">
