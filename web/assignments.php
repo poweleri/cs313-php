@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Homepage</title>
+	<title>Assignments</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
@@ -15,10 +15,7 @@
 
 <body>
 	<div class="container">
-		<h2>Welcome to this Homepage</h2>
-		<a href="assignments.php"/>
-		<a href="about-me.php"/>
+		<p>Coming Soon</p>
 	</div>
 </body>
-
 </html>
