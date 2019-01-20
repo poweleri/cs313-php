@@ -15,8 +15,10 @@
 
 <body>
 	<div class="container">
-		<p>Coming Soon</p>
 		<img src="http://images.fineartamerica.com/images/artworkimages/mediumlarge/1/mount-rainier-over-puget-sound-greg-hjellen.jpg";/>
+		
+		<ul>
+		</ul>
 	</div>
 </body>
 </html>
