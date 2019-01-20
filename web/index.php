@@ -18,11 +18,11 @@
 	<div class="jumbotron">
 		<h2>Welcome to this Homepage</h2>
 	</div>
-	<img src="http://images.fineartamerica.com/images/artworkimages/mediumlarge/1/mount-rainier-over-puget-sound-greg-hjellen.jpg";/>
+	<img class="rounded mx-auto d-block" src="http://images.fineartamerica.com/images/artworkimages/mediumlarge/1/mount-rainier-over-puget-sound-greg-hjellen.jpg" alt="Mount Rainer Over the Puget Sound"/>
 	<div class="container">
 		<ul class="row">
-			<li><a href="assignments.php">Assignments</a></li>
-			<li><a href="about-me.php">About Me</a></li>
+			<li class="col"><a href="assignments.php">Assignments</a></li>
+			<li class="col"><a href="about-me.php">About Me</a></li>
 		</ul>
 	</div>
 </body>
