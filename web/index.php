@@ -15,9 +15,12 @@
 </head>
 
 <body>
-	<div class="container">
+	<div class="jumbotron">
 		<h2>Welcome to this Homepage</h2>
-		<ul>
+	</div>
+	<img src="http://images.fineartamerica.com/images/artworkimages/mediumlarge/1/mount-rainier-over-puget-sound-greg-hjellen.jpg";/>
+	<div class="container">
+		<ul class="row">
 			<li><a href="assignments.php">Assignments</a></li>
 			<li><a href="about-me.php">About Me</a></li>
 		</ul>

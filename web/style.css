@@ -2,6 +2,11 @@ body {
 	background-color: #71aea7;
 }
 
+.jumbotron {
+	text-align: center;
+}
+
 .container {
-	background-color: rgba(50, 50, 50, .25);
+	background-color: rgba(80, 80, 80, .45);
+	
 }
