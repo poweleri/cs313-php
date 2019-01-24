@@ -1,15 +1,12 @@
 <?php 
 	session_start();
-	//if(!isset($_SESSION["item_codes"], $_SESSION["items"])){
+	if(!isset($_SESSION["item_codes"], $_SESSION["items"])){
 		$_SESSION["item_codes"] = array("swrd", "fksnk", "rlsnk", "brol", "bfb", "sjb", "clj", "htp");
-		$_SESSION["items"] = array ( "swrd" => "Sword", "fksnk" => "A Fake Snake", "rlsnk" => "A Real Snake"
-								   , "brol" => "The Breath Of Life", "bfb" => "A Blue Footed Boobie"
-							 	   , "sjb" => "A Single Jelly Bean", "clj" => "Child-like Joy"
-							 	   , "htp" => "Half of a Tide pod");
-	}	
-	//if(isset($_GET["cart"])){
-		$_SESSION["cart"] = $_GET["cart"];
-	//}
+		$_SESSION["items"] = array( "swrd" => "Sword", "fksnk" => "A Fake Snake", "rlsnk" => "A Real Snake"
+								  , "brol" => "The Breath Of Life", "bfb" => "A Blue Footed Boobie"
+							 	  , "sjb" => "A Single Jelly Bean", "clj" => "Child-like Joy"
+							 	  , "htp" => "Half of a Tide pod");
+	}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +28,7 @@
 		<p>Welcome to the Generic Online Shop!</p><br/>
 		<p>Please browse and enjoy our wares</p>
 		<a href="./cart.php">Shopping Cart</a>
-		<form action="browse.php" method="get">
+		<form action="add.php" method="post">
 			<?php
 				foreach($_SESSION["items"] as $key => $val){
 					echo "<input class='item' type='checkbox' name='cart' value=\"" 

@@ -1,5 +1,6 @@
 <?php 
 	session_start();
+	$cart = $_SESSION["cart"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +19,7 @@
 <body>
 	<div class="container">
 		<?php
-			foreach ($_SESSION["cart"] as $key => $value) {
+			foreach ($_SESSION["cart"] as $value) {
 				echo "<p>$value</p><br/>";
 			}
 		?>
