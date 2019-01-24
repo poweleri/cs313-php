@@ -32,11 +32,13 @@
 			<?php
 				foreach($_SESSION["items"] as $key => $val){
 					echo "<input class='item' type='checkbox' name='cart' value=\"" 
-						 . $key . "\">" . $value . "</input><br/>";
+						 . $key . "\">" . $val . "</input><br/>";
 				}
 			?>
 			<button type="submit">Add To Cart</button>
 		</form>
+
+		<p>Here is what is currently in the cart: <?php foreach($_SESSION["cart"] as $key => $val){echo "$val ";} ?></p>
 	</div>
 </body>
 </html>
