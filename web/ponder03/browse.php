@@ -41,7 +41,7 @@
 			<button type="submit">Add To Cart</button>
 		</form>
 
-		<p>Here is what is currently in the cart: <?php foreach($_SESSION["cart"] as $val){echo "$_SESSION[\"items\"][$val] ";} ?></p>
+		<p>Here is what is currently in the cart: <?php foreach($_SESSION["cart"] as $val){echo "$_SESSION['items'][$val] ";} ?></p>
 	</div>
 </body>
 </html>
