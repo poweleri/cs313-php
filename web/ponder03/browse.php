@@ -30,7 +30,7 @@
 		<form action="add.php" method="post">
 			<?php
 				foreach($_SESSION["items"] as $key => $val){
-					echo "<input class='item' type='checkbox' name='cart' value=\"" 
+					echo "<input class=\"item\" type=\"checkbox\" name=\"cart\" value=\"" 
 						 . $key . "\">" . $val . "</input><br/>";
 				}
 			?>

@@ -1,6 +1,10 @@
 <?php 
 	session_start();
-	$cart = $_SESSION["cart"];
+	if(isset($_SESSION["cart"])){
+		$cart = $_SESSION["cart"];
+	} else{
+		$cart = array();
+	}
 ?>
 <!DOCTYPE html>
 <html lang="en">
