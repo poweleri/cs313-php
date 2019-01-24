@@ -3,7 +3,7 @@
 	if(isset($_SESSION["cart"])){
 		$cart = $_SESSION["cart"];
 	} else{
-		$cart = array();
+		$cart = array("Nothing in here");
 	}
 ?>
 <!DOCTYPE html>
