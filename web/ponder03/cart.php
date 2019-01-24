@@ -24,7 +24,7 @@
 	<div class="container">
 		<?php
 			foreach ($cart as $value) {
-				echo "<p>$value</p><br/>";
+				echo "<p>" . $_SESSION["items"][$value] . "</p><br/>";
 			}
 		?>
 		<a href="browse.php">Back To Shopping</a>
