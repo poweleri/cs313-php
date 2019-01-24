@@ -19,7 +19,7 @@
 <body>
 	<div class="container">
 		<?php
-			foreach ($_SESSION["cart"] as $value) {
+			foreach ($cart as $value) {
 				echo "<p>$value</p><br/>";
 			}
 		?>
