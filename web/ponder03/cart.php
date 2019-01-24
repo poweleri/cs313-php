@@ -16,6 +16,14 @@
 
 
 <body>
-
+	<div class="container">
+		<?php
+			foreach ($_SESSION["cart"] as $key => $value) {
+				echo "<p>$value</p><br/>";
+			}
+		?>
+		<a href="browse.php">Back To Shopping</a>
+		<a href="checkout.php">Checkout</a>		
+	</div>
 </body>
 </html>
