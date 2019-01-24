@@ -1,15 +1,15 @@
 <?php 
 	session_start();
-	if(!isset($_SESSION["item_codes"], $_SESSION["items"])){
+	//if(!isset($_SESSION["item_codes"], $_SESSION["items"])){
 		$_SESSION["item_codes"] = array("swrd", "fksnk", "rlsnk", "brol", "bfb", "sjb", "clj", "htp");
 		$_SESSION["items"] = array ( "swrd" => "Sword", "fksnk" => "A Fake Snake", "rlsnk" => "A Real Snake"
 								   , "brol" => "The Breath Of Life", "bfb" => "A Blue Footed Boobie"
 							 	   , "sjb" => "A Single Jelly Bean", "clj" => "Child-like Joy"
 							 	   , "htp" => "Half of a Tide pod");
 	}	
-	if(isset($_GET["cart"])){
+	//if(isset($_GET["cart"])){
 		$_SESSION["cart"] = $_GET["cart"];
-	}
+	//}
 ?>
 <!DOCTYPE html>
 <html lang="en">
