@@ -5,7 +5,7 @@
 							  , "brol" => "The Breath Of Life", "bfb" => "A Blue Footed Boobie"
 						 	  , "sjb" => "A Single Jelly Bean", "clj" => "Child-like Joy"
 						 	  , "htp" => "Half of a Tide pod");
-	
+	$_SESSION["cart"] = array();
 ?>
 <!DOCTYPE html>
 <html lang="en">
