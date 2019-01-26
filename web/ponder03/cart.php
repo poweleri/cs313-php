@@ -21,10 +21,10 @@
 		<?php
 			foreach ($_SESSION["cart"] as $key => $value) {
 				if ($value == True){
-					echo "<form action=\"remove.php\" method\"post\">"
+					echo "<form action=\"remove.php\" method=\"post\">"
 					   . $_SESSION["items"][$key]
 					   . "<input type=\"hidden\" name=\"item\" value=\"" . $key . "\"/>"
-					   . "<button type=\"submit\">Remove</button><br/>"
+					   . " <button type=\"submit\">Remove</button><br/>"
 					   . "</form>";
 				}
 			}

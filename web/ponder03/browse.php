@@ -26,10 +26,11 @@
 <body>
 
 	<div class="container">
-		<p>Welcome to the Generic Online Shop!</p><br/>
-		<p>Please browse and enjoy our wares</p>
-		<a href="./cart.php">Shopping Cart</a>
-		
+		<div class="jumbotron">
+			<p>Welcome to the Generic Online Shop!</p>
+			<p>Please browse and enjoy our wares</p>
+			<a href="./cart.php">Shopping Cart</a>
+		</div>
 		<div class="container">
 			<div class="row">
 				<form class="col" action="add.php" method="post">
