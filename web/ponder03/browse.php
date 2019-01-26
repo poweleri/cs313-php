@@ -1,11 +1,13 @@
 <?php 
 	session_start();
-	$_SESSION["cart"] = array("swrd" => 0, "fksnk" => 0, "rlsnk" => 0, "brol" => 0
-								   , "bfb" => 0, "sjb"   => 0, "clj"   => 0, "htp"  => 0);
-	$_SESSION["items"] = array( "swrd" => "Sword", "fksnk" => "A Fake Snake", "rlsnk" => "A Real Snake"
+	if(!isset($_SESSION["cart"])){
+		$_SESSION["cart"] = array("swrd" => 0, "fksnk" => 0, "rlsnk" => 0, "brol" => 0
+	  						     , "bfb" => 0, "sjb"   => 0, "clj"   => 0, "htp"  => 0);
+	}
+	/*$_SESSION["items"] = array( "swrd" => "Sword", "fksnk" => "A Fake Snake", "rlsnk" => "A Real Snake"
 							  , "brol" => "The Breath Of Life", "bfb" => "A Blue Footed Boobie"
 						 	  , "sjb" => "A Single Jelly Bean", "clj" => "Child-like Joy"
-						 	  , "htp" => "Half of a Tide pod");
+						 	  , "htp" => "Half of a Tide pod"); */
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,32 +31,58 @@
 		<a href="./cart.php">Shopping Cart</a>
 		
 		<div class="container">
-			<?php
-				for ($i=0; $i < (sizeof($_SESSION["items"]) % 4); $i++) { 
-					echo "<div class=\"row\">";
-					for ($j=i*4; $j < ((i + 1) * 4) ; $j++) { 
-						echo "<form class=\"col\" action=\"add.php\" method=\"post\">"
-						   . "<input type=\"hidden\" name=\"item\" value=\""
-						   . $_SESSION["items"][$j]
-						   . "><button type=\"submit\">Add To Cart</button>"
-						   . "</form>";
-					}
-					echo "</div>";
-				}
-
-			?>
-
-
-
-<!--			<form action="add.php" method="post">
-				<?php
-					foreach($_SESSION["items"] as $key => $val){
-						echo "<input class=\"item\" type=\"checkbox\" name=\"cart\" value=\"" 
-							 . $key . "\">" . $val . "</input><br/>";
-					}
-				?>
-				<button type="submit">Add To Cart</button>
-			</form> -->
+			<div class="row">
+				<form class="col" action="add.php" method="post">
+					<h3>Sword</h3>
+					<p>This is a sword you can buy</p>
+					<input type="hidden" name="item" value="swrd"/>
+					<button type="submit">Add To Cart</button>
+				</form>
+				<form class="col" action="add.php" method="post">
+					<h3>A Fake Snake</h3>
+					<p>Impress your friends with this fake snake!</p>
+					<input type="hidden" name="item" value="fksnk"/>
+					<button type="submit">Add To Cart</button>
+				</form>
+				<form class="col" action="add.php" method="post">
+					<h3>A Real Snake</h3>
+					<p>Impress your friends with this real snake!</p>
+					<input type="hidden" name="item" value="rlsnk"/>
+					<button type="submit">Add To Cart</button>
+				</form>
+				<form class="col" action="add.php" method="post">
+					<h3>The Breath of Life</h3>
+					<p>I don't know why you would want to get this when you already have it, but you can buy this</p>
+					<input type="hidden" name="item" value="brol"/>
+					<button type="submit">Add To Cart</button>
+				</form>
+			</div>
+			<div class="row">
+				<form class="col" action="add.php" method="post">
+					<h3>A Blue Footed Boobie</h3>
+					<p>A very classy bird</p>
+					<input type="hidden" name="item" value="bfb"/>
+					<button type="submit">Add To Cart</button>
+				</form>
+				<form class="col" action="add.php" method="post">
+					<h3>A Single Jelly Bean</h3>
+					<p>A lovely sweet snack you can eat later</p>
+					<input type="hidden" name="item" value="sjb"/>
+					<button type="submit">Add To Cart</button>
+				</form>
+				<form class="col" action="add.php" method="post">
+					<h3>Child-like Joy</h3>
+					<p>Be taken back to your childhood with this purchase</p>
+					<input type="hidden" name="item" value="clj"/>
+					<button type="submit">Add To Cart</button>
+				</form>
+				<form class="col" action="add.php" method="post">
+					<h3>Half a Tide pod</h3>
+					<p>Good for half a load of laundry</p>
+					<input type="hidden" name="item" value="htp"/>
+					<button type="submit">Add To Cart</button>
+				</form>
+			</div>
 		</div>
 	</div>
 </body>
