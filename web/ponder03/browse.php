@@ -46,7 +46,7 @@
 
 
 
-			<form action="add.php" method="post">
+<!--			<form action="add.php" method="post">
 				<?php
 					foreach($_SESSION["items"] as $key => $val){
 						echo "<input class=\"item\" type=\"checkbox\" name=\"cart\" value=\"" 
@@ -54,7 +54,7 @@
 					}
 				?>
 				<button type="submit">Add To Cart</button>
-			</form>
+			</form> -->
 		</div>
 	</div>
 </body>
