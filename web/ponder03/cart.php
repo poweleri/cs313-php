@@ -23,13 +23,20 @@
 				if ($value > 0){
 					echo "<form action=\"remove.php\" method\"post\">"
 					   . "<p>" . $_SESSION["items"][$key] . "</p>"
+					   . "<input type=\"hidden\" value=\"" . $key . "\"/>"
 					   . "<button type=\"submit\">Remove</button><br/>"
 					   . "</form>";
 				}
 			}
 		?>
-		<button action="browse.php">Back To Shopping</a>
-		<button action="checkout.php">Checkout</a>		
+		<div class="row">
+			<form class="col" action="browse.php">
+				<button type="submit">Back To Shopping</button>
+			</form>	
+			<form class="col" action="checkout.php">
+				<button type="submit">Checkout</button>		
+			</form>
+		</div>	
 	</div>
 </body>
 </html>

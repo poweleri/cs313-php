@@ -1,8 +1,8 @@
 <?php 
 	session_start();
 	if(!isset($_SESSION["cart"])){
-		$_SESSION["cart"] = array("swrd" => 0, "fksnk" => 0, "rlsnk" => 0, "brol" => 0
-	  						     , "bfb" => 0, "sjb"   => 0, "clj"   => 0, "htp"  => 0);
+		$_SESSION["cart"] = array("swrd" => False, "fksnk" => False, "rlsnk" => False, "brol" => False
+	  						     , "bfb" => False, "sjb"   => False, "clj"   => False, "htp"  => False);
 	}
 	$_SESSION["items"] = array( "swrd" => "Sword", "fksnk" => "A Fake Snake", "rlsnk" => "A Real Snake"
 							  , "brol" => "The Breath Of Life", "bfb" => "A Blue Footed Boobie"
