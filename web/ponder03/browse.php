@@ -1,11 +1,11 @@
 <?php 
 	session_start();
-	$_SESSION["item_codes"] = array("swrd", "fksnk", "rlsnk", "brol", "bfb", "sjb", "clj", "htp");
+	$_SESSION["cart"] = array("swrd" => 0, "fksnk" => 0, "rlsnk" => 0, "brol" => 0
+								   , "bfb" => 0, "sjb"   => 0, "clj"   => 0, "htp"  => 0);
 	$_SESSION["items"] = array( "swrd" => "Sword", "fksnk" => "A Fake Snake", "rlsnk" => "A Real Snake"
 							  , "brol" => "The Breath Of Life", "bfb" => "A Blue Footed Boobie"
 						 	  , "sjb" => "A Single Jelly Bean", "clj" => "Child-like Joy"
 						 	  , "htp" => "Half of a Tide pod");
-	$_SESSION["cart"] = array();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,15 +27,35 @@
 		<p>Welcome to the Generic Online Shop!</p><br/>
 		<p>Please browse and enjoy our wares</p>
 		<a href="./cart.php">Shopping Cart</a>
-		<form action="add.php" method="post">
+		
+		<div class="container">
 			<?php
-				foreach($_SESSION["items"] as $key => $val){
-					echo "<input class=\"item\" type=\"checkbox\" name=\"cart\" value=\"" 
-						 . $key . "\">" . $val . "</input><br/>";
+				for ($i=0; $i < (sizeof($_SESSION["items"]) % 4); $i++) { 
+					echo "<div class=\"row\">";
+					for ($j=i*4; $j < ((i + 1) * 4) ; $j++) { 
+						echo "<form class=\"col\" action=\"add.php\" method=\"post\">"
+						   . "<input type=\"hidden\" name=\"item\" value=\""
+						   . $_SESSION["items"][$j]
+						   . "><button type=\"submit\">Add To Cart</button>"
+						   . "</form>";
+					}
+					echo "</div>";
 				}
+
 			?>
-			<button type="submit">Add To Cart</button>
-		</form>
+
+
+
+			<form action="add.php" method="post">
+				<?php
+					foreach($_SESSION["items"] as $key => $val){
+						echo "<input class=\"item\" type=\"checkbox\" name=\"cart\" value=\"" 
+							 . $key . "\">" . $val . "</input><br/>";
+					}
+				?>
+				<button type="submit">Add To Cart</button>
+			</form>
+		</div>
 	</div>
 </body>
 </html>

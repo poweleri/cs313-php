@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	array_push($_SESSION["cart"], $_POST["cart"]);
+	$_SESSION["cart"][$_POST["item"]] += 1;
 
 	header("Location: ./browse.php");
 	exit();
