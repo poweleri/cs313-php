@@ -17,8 +17,8 @@
 	<div class="container">
 		<p>To purchase, Please enter the following information:</p>
 		<form action="confirmation.php" method="post">
-			Name: <input type="text" name="name">
-			Address: <textarea name="address" cols="20" rows="3"></textarea>
+			Name: <input type="text" name="name"><br>
+			Address: <textarea name="address" cols="20" rows="3"></textarea><br>
 			Your Current Shopping Cart:
 			<ul>
 				<?php

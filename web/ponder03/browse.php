@@ -26,7 +26,7 @@
 <body>
 
 	<div class="container">
-		<div class="jumbotron">
+		<div class="page-header">
 			<h2>Welcome to the Generic Online Shop!</h2>
 			<h3>Please browse and enjoy our wares</h3>
 			<a href="./cart.php">Shopping Cart</a>

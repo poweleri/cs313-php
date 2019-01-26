@@ -1,5 +1,7 @@
 <?php 
 	session_start();
+	$name = htmlspecialchars($_POST["name"]);
+	$address = htmlspecialchars($_POST["name"]);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,9 +15,25 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 </head>
-
-
 <body>
-
+	<div class="container">
+		<h2>Thank You <?php echo $name; ?>!</h2>
+		<h4>Here are your purchase details:</h4>
+		<p>
+			Name: <?php echo $name; ?>
+			Address: <?php echo $address ?>
+			Items:
+			<ul>
+				<?php
+					foreach ($_SESSION["cart"] as $key => $value) {
+						if ($value == True){
+							echo "<li>" . $_SESSION["items"][$key] . "</li>";
+						}
+					}
+				?>
+			</ul>
+			<a href="clear.php">Return To Homepage</a>
+		</p>
+	</div>
 </body>
 </html>
