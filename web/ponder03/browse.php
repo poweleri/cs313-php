@@ -27,8 +27,8 @@
 
 	<div class="container">
 		<div class="jumbotron">
-			<p>Welcome to the Generic Online Shop!</p>
-			<p>Please browse and enjoy our wares</p>
+			<h2>Welcome to the Generic Online Shop!</h2>
+			<h3>Please browse and enjoy our wares</h3>
 			<a href="./cart.php">Shopping Cart</a>
 		</div>
 		<div class="container">
@@ -57,7 +57,7 @@
 					<input type="hidden" name="item" value="brol"/>
 					<button type="submit">Add To Cart</button>
 				</form>
-			</div>
+			</div> <br/>
 			<div class="row">
 				<form class="col" action="add.php" method="post">
 					<h3>A Blue Footed Boobie</h3>
