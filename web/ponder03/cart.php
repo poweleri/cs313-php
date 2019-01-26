@@ -1,10 +1,5 @@
 <?php 
 	session_start();
-	if(isset($_SESSION["cart"])){
-		$cart = $_SESSION["cart"];
-	} else{
-		$cart = array("Nothing in here");
-	}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,13 +17,19 @@
 
 <body>
 	<div class="container">
+		<p>Shopping Cart:</p><br/>
 		<?php
-			foreach ($cart as $value) {
-				echo "<p>" . $_SESSION["items"][$value] . "</p><br/>";
+			foreach ($_SESSION["cart"] as $key => $value) {
+				if ($value > 0){
+					echo "<form action=\"remove.php\" method\"post\">"
+					   . "<p>" . $_SESSION["items"][$key] . "</p>"
+					   . "<button type=\"submit\">Remove</button><br/>"
+					   . "</form>";
+				}
 			}
 		?>
-		<a href="browse.php">Back To Shopping</a>
-		<a href="checkout.php">Checkout</a>		
+		<button action="browse.php">Back To Shopping</a>
+		<button action="checkout.php">Checkout</a>		
 	</div>
 </body>
 </html>

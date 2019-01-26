@@ -4,10 +4,10 @@
 		$_SESSION["cart"] = array("swrd" => 0, "fksnk" => 0, "rlsnk" => 0, "brol" => 0
 	  						     , "bfb" => 0, "sjb"   => 0, "clj"   => 0, "htp"  => 0);
 	}
-	/*$_SESSION["items"] = array( "swrd" => "Sword", "fksnk" => "A Fake Snake", "rlsnk" => "A Real Snake"
+	$_SESSION["items"] = array( "swrd" => "Sword", "fksnk" => "A Fake Snake", "rlsnk" => "A Real Snake"
 							  , "brol" => "The Breath Of Life", "bfb" => "A Blue Footed Boobie"
 						 	  , "sjb" => "A Single Jelly Bean", "clj" => "Child-like Joy"
-						 	  , "htp" => "Half of a Tide pod"); */
+						 	  , "htp" => "Half of a Tide pod"); 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -66,7 +66,7 @@
 				</form>
 				<form class="col" action="add.php" method="post">
 					<h3>A Single Jelly Bean</h3>
-					<p>A lovely sweet snack you can eat later</p>
+					<p>A sweet snack you can eat later</p>
 					<input type="hidden" name="item" value="sjb"/>
 					<button type="submit">Add To Cart</button>
 				</form>
