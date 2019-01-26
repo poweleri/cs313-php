@@ -20,7 +20,7 @@
 		<p>Shopping Cart:</p><br/>
 		<?php
 			foreach ($_SESSION["cart"] as $key => $value) {
-				if ($value){
+				if ($value == True){
 					echo "<form action=\"remove.php\" method\"post\">"
 					   . $_SESSION["items"][$key]
 					   . "<input type=\"hidden\" name=\"item\" value=\"" . $key . "\"/>"
