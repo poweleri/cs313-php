@@ -13,22 +13,23 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 </head>
-
-
 <body>
 	<div class="container">
-		<p>Shopping Cart:</p><br/>
-		<?php
-			foreach ($_SESSION["cart"] as $key => $value) {
-				if ($value == True){
-					echo "<form action=\"remove.php\" method=\"post\">"
-					   . $_SESSION["items"][$key]
-					   . "<input type=\"hidden\" name=\"item\" value=\"" . $key . "\"/>"
-					   . " <button type=\"submit\">Remove</button><br/>"
-					   . "</form>";
-				}
-			}
-		?>
+		<p>Shopping Cart:
+			<ul>
+				<?php
+					foreach ($_SESSION["cart"] as $key => $value) {
+						if ($value == True){
+							echo "<li><form action=\"remove.php\" method=\"post\">"
+							   . $_SESSION["items"][$key]
+							   . "<input type=\"hidden\" name=\"item\" value=\"" . $key . "\"/>"
+							   . " <button type=\"submit\">Remove</button><br/>"
+							   . "</form></li>";
+						}
+					}
+				?>
+			</ul>
+		</p>
 		<div class="row">
 			<form class="col" action="browse.php">
 				<button type="submit">Back To Shopping</button>

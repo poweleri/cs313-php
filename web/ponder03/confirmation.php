@@ -20,8 +20,8 @@
 		<h2>Thank You <?php echo $name; ?>!</h2>
 		<h4>Here are your purchase details:</h4>
 		<p>
-			Name: <?php echo $name; ?>
-			Address: <?php echo $address ?>
+			Name: <?php echo $name; ?><br/>
+			Address: <?php echo $address ?><br/>
 			Items:
 			<ul>
 				<?php
@@ -31,7 +31,7 @@
 						}
 					}
 				?>
-			</ul>
+			</ul><br/>
 			<form action="clear.php">
 				<button type="submit">Return To Homepage</button>
 			</form>	

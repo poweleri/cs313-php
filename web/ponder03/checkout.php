@@ -16,21 +16,26 @@
 <body>
 	<div class="container">
 		<p>To purchase, Please enter the following information:</p>
-		<form action="confirmation.php" method="post">
-			Name: <input type="text" name="name"><br>
-			Address: <textarea name="address" cols="20" rows="3"></textarea><br>
-			Your Current Shopping Cart:
-			<ul>
-				<?php
-					foreach ($_SESSION["cart"] as $key => $value) {
-						if ($value == True){
-							echo "<li>" . $_SESSION["items"][$key] . "</li>";
+		<div class="row">
+			<form action="confirmation.php" method="post">
+				Name: <input type="text" name="name"><br>
+				Address: <textarea name="address" cols="20" rows="3"></textarea><br>
+				Your Current Shopping Cart:
+				<ul>
+					<?php
+						foreach ($_SESSION["cart"] as $key => $value) {
+							if ($value == True){
+								echo "<li>" . $_SESSION["items"][$key] . "</li>";
+							}
 						}
-					}
-				?>
-			</ul>	
-			<button type="submit">Confirm Purchase</button>
-		</form>
+					?>
+				</ul>	
+				<button type="submit">Confirm Purchase</button>
+			</form>
+			<form action="cart.php">
+				<button type="submit">Retrun to Cart</button>
+			</form>
+		</div>
 	</div>
 </body>
 </html>
