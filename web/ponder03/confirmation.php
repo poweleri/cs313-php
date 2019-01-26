@@ -32,7 +32,9 @@
 					}
 				?>
 			</ul>
-			<a href="clear.php">Return To Homepage</a>
+			<form action="clear.php">
+				<button type="submit">Return To Homepage</button>
+			</form>	
 		</p>
 	</div>
 </body>
