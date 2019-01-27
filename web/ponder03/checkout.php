@@ -32,10 +32,10 @@
 				</ul>	
 				<button type="submit">Confirm Purchase</button>
 			</form>
-			<form action="cart.php">
-				<button type="submit">Retrun to Cart</button>
-			</form>
 		</div>
+		<form action="cart.php">
+			<button type="submit">Retrun to Cart</button>
+		</form>
 	</div>
 </body>
 </html>
