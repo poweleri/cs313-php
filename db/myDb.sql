@@ -6,9 +6,9 @@ CREATE TABLE public.usr (
 );
 
 CREATE TABLE public.parking_lot (
-   parking_lot_id INT          NOT NULL
+   parking_lot_id SERIAL       NOT NULL
 ,  description    VARCHAR(500)
-,  rating         NUMBER
+,  rating         NUMERIC
 ,  conditions     VARCHAR(100)
 ,  CONSTRAINT pk_parking_lot PRIMARY KEY (parking_lot_id)
 );
@@ -41,7 +41,7 @@ CREATE TABLE public.parking_lot_building_join (
 ,  CONSTRAINT fk_parking_lot_building_join_1 
       FOREIGN KEY (parking_lot_id) REFERENCES
       public.parking_lot(parking_lot_id)
-,  CONSTRAINT fk_parking_lot_building_join_1 
+,  CONSTRAINT fk_parking_lot_building_join_2 
       FOREIGN KEY (building_id) REFERENCES
       public.building(building_id)
 );
