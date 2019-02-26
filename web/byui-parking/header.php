@@ -5,9 +5,9 @@
 <div class="container-fluid">
 	<div class="row">
 		<?php
-			echo "<div class=\"col\"><a href=\"searchLots.php\">Home</a></div>";
-			echo "<div class=\"col\"><h2>BYU-Idaho Parking Reviews</h2></div>";
-			echo "<div class=\"col\">";
+			echo "<div style=\"text-align: center\" class=\"col\"><a href=\"searchLots.php\">Home</a></div>";
+			echo "<div style=\"text-align: center\" class=\"col\"><h2>BYU-Idaho Parking Reviews</h2></div>";
+			echo "<div style=\"text-align: center\" class=\"col\">";
 			if (isset($_SESSION["username"])){
 				$user = $_SESSION["username"]; 
 				echo "<p>$user (<a href=\"logout.php\">Logout</a>)</p>";
