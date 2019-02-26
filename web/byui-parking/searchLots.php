@@ -1,6 +1,11 @@
 <?php
 	require 'dbConnection.php';
 	$db = get_db();
+
+	if (isset($_POST["buildings"])){
+		$buildings = $_POST["buildings"];
+	}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -36,7 +41,7 @@
 		<h2>Lots</h2>
 		<?php
 			$statement = NULL;
-			if (isset($_POST["buildings"])){
+			if ($buildings){
 				$lots = Set();
 				$parkinglotQuery = 'SELECT pkl.parking_lot_id as id, pkl.description as desc
 								  , pkl.conditions as cond, COALESCE(NULLIF(avg(lc.rating), NULL), \'0\') as average
@@ -44,7 +49,6 @@
 	                    			INNER JOIN parking_lot_building_join pklbj ON pklbj.parking_lot_id = pkl.parking_lot_id
 	                         			  AND  pklbj.building_id = :building
 									GROUP BY id;';
-				$buildings = $_POST["buildings"];
 				foreach($buildings as $building){
 					$statement = $db->prepare($parkingLotQuery);
 					$statement->bindValue(":building", $building);
