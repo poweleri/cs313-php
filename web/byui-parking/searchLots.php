@@ -28,9 +28,36 @@
 	<div>
 		<h2>Lots</h2>
 		<?php
-			echo"<div>";
+			$statement = NULL;
+			if (isset($_POST["buildings"])){
+				$parkinglotQuery = 'SELECT pkl.parking_lot_id as id, pkl.description as desc, pkl.conditions as cond, avg(lc.rating) as average
+									FROM parking_lot pkl INNER JOIN lot_comment lc ON pkl.parking_lot_id = lc.parking_lot_id
+	                    			INNER JOIN parking_lot_building_join pklbj ON pklbj.parking_lot_id = pkl.parking_lot_id
+	                         			  AND  pklbj.building_id IN :buildings
+									GROUP BY id;';
+				$buildings = "(" . implode($_POST["buildings"], ", ") . ")";
+				$statement = $db->prepare($parkingLotQuery);
+				$statement-> bindValue(":buildings", $buildings);
+				$statment->execute();
 
-			echo"</div>";
+			} else {
+				$parkinglotQuery = 'SELECT pkl.parking_lot_id as id, pkl.description as desc, pkl.conditions as cond, avg(lc.rating) as average
+									FROM parking_lot pkl INNER JOIN lot_comment lc ON pkl.parking_lot_id = lc.parking_lot_id
+									GROUP BY id;';
+				$statement = $db->query($parkinglotQuery);
+				
+			}	
+			while ($row = $statement->fetch(PDO::FETCH_ASSOC)){
+				$id   = $row['id'];
+				$desc = $row['desc'];
+				$cond = $row['cond'];
+				$avg  = $row['average'];
+				echo "<div>
+						<p><a href=\"lotComments.php?lot=$id\">$desc</a><br>
+						   Score: $avg<br>
+						   Conditions: $cond</p>
+				 	  </div>";
+			} 
 		?>
 	</div>
 </body>
