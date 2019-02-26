@@ -8,7 +8,7 @@
 	<title>BYU-I Parking Lots</title>
 </head>
 <body>
-	<?php require 'header.php' ?>
+	<?php require 'header.php'; ?>
 	<div>
 		<h2>Buildings</h2>
 		<form action="searchLots.php">
@@ -17,7 +17,9 @@
 
 				$statement = $db->query($buildingQuery);
 				while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-					echo "<input type=\"checkbox\" name=\"buildings\" value=\"$row['id']\">$row['description']<br>";
+					$id = $row['id'];
+					$desc = $row['description'];
+					echo "<input type=\"checkbox\" name=\"buildings\" value=\"$id\">$desc<br>";
 				}
 			?>
 			<input type="submit" value="Update List">
