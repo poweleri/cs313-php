@@ -21,6 +21,6 @@
 		echo $e;
 	}
 
-	header("Location: $_POST['returnPage']");
+	header("Location: " . $_POST['returnPage']);
 	die();
 ?>
