@@ -37,16 +37,31 @@
 		<?php
 			$statement = NULL;
 			if (isset($_POST["buildings"])){
+				$lots = Set();
 				$parkinglotQuery = 'SELECT pkl.parking_lot_id as id, pkl.description as desc
 								  , pkl.conditions as cond, COALESCE(NULLIF(avg(lc.rating), NULL), \'0\') as average
 									FROM parking_lot pkl LEFT JOIN lot_comment lc ON pkl.parking_lot_id = lc.parking_lot_id
 	                    			INNER JOIN parking_lot_building_join pklbj ON pklbj.parking_lot_id = pkl.parking_lot_id
-	                         			  AND  pklbj.building_id IN :buildings
+	                         			  AND  pklbj.building_id = :building
 									GROUP BY id;';
-				$buildings = "(" . implode($_POST["buildings"], ", ") . ")";
-				$statement = $db->prepare($parkingLotQuery);
-				$statement->bindValue(":buildings", $buildings);
-				$statement->execute();
+				$buildings = $_POST["buildings"];
+				foreach($buildings as $building){
+					$statement = $db->prepare($parkingLotQuery);
+					$statement->bindValue(":building", $building);
+					$statement->execute();
+					while($lots.add($statement->fetch(PDO::FETCH_ASSOC)));
+				}
+				foreach ($row in $lots) { 
+					$id   = $row['id'];
+					$desc = $row['desc'];
+					$cond = $row['cond'];
+					$avg  = number_format($row['average'], 2);
+					echo "<div class=\"row\">
+							<p><a href=\"lotComments.php?lot=$id\">$desc</a><br>
+							   Score: $avg<br>
+							   Conditions: $cond</p>
+					 	  </div>";
+				}
 
 			} else {
 				$parkinglotQuery = 'SELECT pkl.parking_lot_id as id, pkl.description as desc
