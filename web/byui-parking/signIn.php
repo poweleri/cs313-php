@@ -41,7 +41,7 @@
 </head>
 <body>
 	<?php require 'header.php'; ?>
-	<div class="fluid-container">
+	<div class="container">
 		<div class="row">
 			<p>Sign in:</p>
 			<?php if($badLogin){ echo "<p><b>Error:</b> Either Username or Password is incorrect</p>";} ?>

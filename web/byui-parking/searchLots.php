@@ -16,7 +16,7 @@
 </head>
 <body>
 	<?php require 'header.php'; ?>
-	<div class="fluid-container">
+	<div class="container">
 		<h2>Buildings</h2>
 		<form action="searchLots.php" method="GET">
 			<?php 
@@ -32,7 +32,7 @@
 			<input type="submit" value="Update List">
 		</form>
 	</div>
-	<div class="fluid-container">
+	<div class="container">
 		<h2>Lots</h2>
 		<?php
 			$statement = NULL;

@@ -19,7 +19,7 @@
 </head>
 <body>
 	<?php require 'header.php'; ?>
-	<div class="fluid-container">
+	<div class="container">
 		<h2><?php echo $lot_info['description']; ?></h2>
 		<h3>Conditions: <?php echo $lot_info['conditions']; ?></h3>
 		<p>Close Buildings: </p>
@@ -36,32 +36,32 @@
 				}
 			?>
 		</ul>
-		<div class="fluid-container">
-			<h2>User Ratings</h2>
-			<?php
-				$noteQuery = "SELECT lc.lot_comment_info as note, lc.rating, u.username 
-							  FROM lot_comment lc INNER JOIN usr u ON lc.usr_id=u.usr_id AND lc.parking_lot_id = $lot_id;";
-				$statement = $db->query($noteQuery);
-				while($row = $statement->fetch(PDO::FETCH_ASSOC)){
-					$note = $row['note'];
-					$rating = $row['rating'];
-					$username = $row['username'];
-					echo "<div class=\"row\"><p><textarea rows=\"5\" cols=\"100\" disabled>$note</textarea><br>Rating: $rating<br>User: $username</p></div>";
-				}		  	  					  
-			?>
-			<div class="row">
-				<form action="addComment.php" method="POST">
-					<textarea name="note" rows="5" cols="100"></textarea><br>
-					1: <input type="radio" name="rating" value="1">
-					2: <input type="radio" name="rating" value="2">
-					3: <input type="radio" name="rating" value="3">
-					4: <input type="radio" name="rating" value="4">
-					5: <input type="radio" name="rating" value="5" checked="true"><br>
-					<input type="hidden" name="returnPage" value=<?php echo basename($_SERVER['PHP_SELF']) . "?lot=" . $lot_id; ?>>
-					<input type="hidden" name="lot_id" value=<?php echo $lot_id; ?>>
-					<input type="submit" value="Add Review">
-				</form>
-			</div>
+	</div>
+	<div class="container">
+		<h2>User Ratings</h2>
+		<?php
+			$noteQuery = "SELECT lc.lot_comment_info as note, lc.rating, u.username 
+						  FROM lot_comment lc INNER JOIN usr u ON lc.usr_id=u.usr_id AND lc.parking_lot_id = $lot_id;";
+			$statement = $db->query($noteQuery);
+			while($row = $statement->fetch(PDO::FETCH_ASSOC)){
+				$note = $row['note'];
+				$rating = $row['rating'];
+				$username = $row['username'];
+				echo "<div class=\"row\"><p><textarea rows=\"5\" cols=\"100\" disabled>$note</textarea><br>Rating: $rating<br>User: $username</p></div>";
+			}		  	  					  
+		?>
+		<div class="row">
+			<form action="addComment.php" method="POST">
+				<textarea name="note" rows="5" cols="100"></textarea><br>
+				1: <input type="radio" name="rating" value="1">
+				2: <input type="radio" name="rating" value="2">
+				3: <input type="radio" name="rating" value="3">
+				4: <input type="radio" name="rating" value="4">
+				5: <input type="radio" name="rating" value="5" checked="true"><br>
+				<input type="hidden" name="returnPage" value=<?php echo basename($_SERVER['PHP_SELF']) . "?lot=" . $lot_id; ?>>
+				<input type="hidden" name="lot_id" value=<?php echo $lot_id; ?>>
+				<input type="submit" value="Add Review">
+			</form>
 		</div>
 	</div>
 </body>
