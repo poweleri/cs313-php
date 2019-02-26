@@ -11,7 +11,7 @@
 	<?php require 'header.php'; ?>
 	<div>
 		<h2>Buildings</h2>
-		<form action="searchLots.php">
+		<form action="searchLots.php" method="GET">
 			<?php 
 				$buildingQuery = 'SELECT building_id as id, description from building;';
 
@@ -37,7 +37,7 @@
 									GROUP BY id;';
 				$buildings = "(" . implode($_POST["buildings"], ", ") . ")";
 				$statement = $db->prepare($parkingLotQuery);
-				$statement-> bindValue(":buildings", $buildings);
+				$statement->bindValue(":buildings", $buildings);
 				$statment->execute();
 
 			} else {
@@ -51,7 +51,7 @@
 				$id   = $row['id'];
 				$desc = $row['desc'];
 				$cond = $row['cond'];
-				$avg  = $row['average'];
+				$avg  = number_format($row['average'], 2);
 				echo "<div>
 						<p><a href=\"lotComments.php?lot=$id\">$desc</a><br>
 						   Score: $avg<br>
