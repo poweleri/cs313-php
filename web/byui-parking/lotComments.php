@@ -13,7 +13,7 @@
 <body>
 	<?php require 'header.php'; ?>
 	<div>
-		<h2><?php echo $lot_info['description']; echo $lot_id; ?></h2>
+		<h2><?php echo $lot_info['description']; ?></h2>
 		<h3>Conditions: <?php echo $lot_info['conditions']; ?></h3>
 		<p>Close Buildings: </p>
 		<ul>

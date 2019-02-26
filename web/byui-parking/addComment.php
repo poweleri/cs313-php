@@ -14,7 +14,7 @@
 		$statement = $db->prepare($query);
 		$statement->bindValue(':note', $_POST['note']);
 		$statement->bindValue(':rating', $_POST['rating'], PDO::PARAM_INT);
-		$statement->bindValue(':usr_id', $_SESSION['user'], PDO::PARAM_INT);
+		$statement->bindValue(':usr_id', $_SESSION['usr_id'], PDO::PARAM_INT);
 		$statement->bindValue(':lot_id', $_POST['lot_id'], PDO::PARAM_INT);
 		$statement->execute();
 	} catch (Exception $e) {

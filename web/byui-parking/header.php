@@ -9,7 +9,7 @@
 				$user = $_SESSION["username"]; 
 				echo "<p>$user (<a href=\"logout.php\">Logout</a>)</p>";
 			} else {
-				echo "<p><a href=\"signIn.html\">Sign In</a><br><a href=\"signUp.html\">Create an Account</a>";
+				echo "<p><a href=\"signIn.php\">Sign In</a><br><a href=\"signUp.html\">Create an Account</a>";
 			}
 		?>
 	</div>
