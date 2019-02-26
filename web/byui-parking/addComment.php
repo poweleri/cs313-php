@@ -4,7 +4,6 @@
 	$db = get_db();
 
 	if (not isset($_SESSION['user'])){
-		echo "<script type=\"text/javascript\">alert(\"You must be signed in to add a review. Redirecting to Login page\");</script>";
 		header("Location: signIn.html");
 		die();
 	}
