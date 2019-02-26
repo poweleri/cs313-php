@@ -44,7 +44,7 @@
 		</form>
 	</div>
 	<div>
-		<p>Or <a href="signUp.html">Create a new Account</a></p>
+		<p>Or <a href="signUp.php">Create a new Account</a></p>
 	</div>
 </body>
 </html>
