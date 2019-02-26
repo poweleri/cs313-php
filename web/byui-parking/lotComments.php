@@ -13,7 +13,7 @@
 <body>
 	<?php require 'header.php'; ?>
 	<div>
-		<h2><?php echo $lot_info['description']; ?></h2>
+		<h2><?php echo $lot_info['description']; echo $lot_id; ?></h2>
 		<h3>Conditions: <?php echo $lot_info['conditions']; ?></h3>
 		<p>Close Buildings: </p>
 		<ul>
@@ -32,11 +32,9 @@
 		<div>
 			<h2>User Ratings</h2>
 			<?php
-				$noteQuery = "SELECT lc.lot_comment_info as note, lc.rating, u.username 
-							  FROM lot_comment lc INNER JOIN usr u ON lc.usr_id=u.usr_id
-						  	  					  AND lc.parking_lot_id = ?";
+				$noteQuery = "SELECT lc.lot_comment_info as note, lc.rating, u.username FROM lot_comment lc INNER JOIN usr u ON lc.usr_id=u.usr_id AND lc.parking_lot_id = :lot";
 				$statement = $db->prepare($query);
-				$statement->bindValue(1, $lot_id, PDO::PARAM_INT);
+				$statement->bindValue(':lot', $lot_id, PDO::PARAM_INT);
 				$statement->execute();
 				while($row = $statement->fetch(PDO::FETCH_ASSOC)){
 					$note = $row['note'];
