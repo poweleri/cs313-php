@@ -25,7 +25,7 @@
 		<p>Close Buildings: </p>
 		<ul>
 			<?php
-				$query = "SELECT b.building_id, b.description 
+				$query = "SELECT DISTINCT b.building_id, b.description 
 						  FROM building b INNER JOIN parking_lot_building_join pklbj ON b.building_id=pklbj.building_id
 						  				  INNER JOIN parking_lot ON pklbj.parking_lot_id=$lot_id";
 				$statement = $db->query($query);
