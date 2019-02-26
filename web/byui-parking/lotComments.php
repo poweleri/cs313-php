@@ -34,7 +34,7 @@
 			<?php
 				$noteQuery = "SELECT lc.lot_comment_info as note, lc.rating, u.username 
 							  FROM lot_comment lc INNER JOIN usr u ON lc.usr_id=u.usr_id AND lc.parking_lot_id = $lot_id;";
-				$statement = $db->query($query);
+				$statement = $db->query($noteQuery);
 				while($row = $statement->fetch(PDO::FETCH_ASSOC)){
 					$note = $row['note'];
 					$rating = $row['rating'];
