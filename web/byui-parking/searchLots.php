@@ -51,7 +51,7 @@
 					$statement->execute();
 					while($lots.add($statement->fetch(PDO::FETCH_ASSOC)));
 				}
-				foreach ($row in $lots) { 
+				foreach ($row as $lots) { 
 					$id   = $row['id'];
 					$desc = $row['desc'];
 					$cond = $row['cond'];
