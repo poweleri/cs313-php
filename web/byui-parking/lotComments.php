@@ -39,7 +39,7 @@
 					$note = $row['note'];
 					$rating = $row['rating'];
 					$username = $row['username'];
-					echo "<div><p><textarea rows=\"5\" cols=\"100\" value=\"$note\" disabled></textarea><br>Rating: $rating<br>User: $username</p></div>";
+					echo "<div><p><textarea rows=\"5\" cols=\"100\" disabled>$note</textarea><br>Rating: $rating<br>User: $username</p></div>";
 				}		  	  					  
 			?>
 			<div>
