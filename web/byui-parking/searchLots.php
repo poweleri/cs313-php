@@ -13,7 +13,7 @@
 		<h2>Buildings</h2>
 		<form action="searchLots.php">
 			<?php 
-				$buildingQuery = 'SELECT building_id as id, description from building;'
+				$buildingQuery = 'SELECT building_id as id, description from building;';
 
 				$statement = $db->query($buildingQuery);
 				while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
