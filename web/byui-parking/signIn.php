@@ -43,14 +43,14 @@
 	<?php require 'header.php'; ?>
 	<div class="container">
 		<div class="row">
-			<p>Sign in:</p>
+			<p>Sign in:</p><br>
 			<?php if($badLogin){ echo "<p><b>Error:</b> Either Username or Password is incorrect</p>";} ?>
 			<form method="POST" action="signIn.php" >
 				Username:<input type="text" name="username"><br>
 				Password:<input type="password" name="password"><br>
 				<input type="submit">
 			</form>
-		</div>
+		</div> <br>
 		<div class="row">
 			<p>Or <a href="signUp.php">Create a new Account</a></p>
 		</div>
