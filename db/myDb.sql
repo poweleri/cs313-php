@@ -52,20 +52,70 @@ CREATE TABLE public.parking_lot_building_join (
       public.building(building_id)
 );
 
-INSERT INTO usr (username, password)
-   VALUES ('test', 'password');
-
 INSERT INTO parking_lot (description, conditions)
-   VALUES ('The _ Parking Lot', 'S Parking pass');
+   VALUES ('SW Parking Lot', '')
+   ,      ('W Parking Lot' , '')
+   ,      ('NW Parking Lot', '')
+   ,      ('N Parking Lot' , '')
+   ,      ('E Parking Lot' , '')
+   ,      ('SE Parking Lot', '')
+   ,      ('Central Parking Lot', '')
+   ,      ('Long-Term Parking Lot', '')
+   ,      ('Center Square Parking Lot', '');
 
 INSERT INTO building (building_cd, description)
-   VALUES ('TEST', 'The Test Building');
-
-INSERT INTO lot_comment (lot_comment_info, rating, usr_id, parking_lot_id)
-   VALUES ('This parking lot is convienient, save the giant pot hole', 4, 1, 1);
+   VALUES ('BCTR', 'BYU-Idaho Center')
+   ,      ('MCK', 'David O. McKay Library') 
+   ,      ('SNW', 'Eliza R. Snow Performing Arts Center') 
+   ,      ('BEN', 'Ezra Taft Benson Agricultural & Biological Sciences Building')
+   ,      ('ROM', 'George S. Romney Building')
+   ,      ('HIN', 'Gordon B. Hinckley Building')
+   ,      ('MC' , 'Hyrum Manwaring Student Center')
+   ,      ('SPO', 'Jacob Spori Building')
+   ,      ('CLK', 'John L. Clarke Building')
+   ,      ('TAY', 'John Taylor Building')
+   ,      ('HRT', 'John W. Hart Physical Education Building')
+   ,      ('SMI', 'Joseph Fielding Smith Building')
+   ,      ('AUS', 'Mark Austin Technical & Engineering Building')
+   ,      ('KRK', 'Oscar A. Kirkham Building')
+   ,      ('STC', 'Science & Technology Center')
+   ,      ('KIM', 'Spence W. Kimball Student & Administration Services Building')
+   ,      ('SHC', 'Student Heath & Counseling Center')
+   ,      ('RKS', 'Thomas E. Ricks Building');
 
 INSERT INTO parking_lot_building_join (parking_lot_id, building_id)
-   VALUES (1, 1);
+   VALUES (1, 4)
+   ,      (1, 13)
+   ,      (1, 15)
+   ,      (2, 1)
+   ,      (2, 7)
+   ,      (2, 11)
+   ,      (3, 3)
+   ,      (3, 5)
+   ,      (3, 8)
+   ,      (3, 11)
+   ,      (4, 3)
+   ,      (4, 5)
+   ,      (4, 8)
+   ,      (4, 9)
+   ,      (4, 14)
+   ,      (5, 2)
+   ,      (5, 6)
+   ,      (5, 9)
+   ,      (5, 10)
+   ,      (5, 12)
+   ,      (5, 16)
+   ,      (5, 17)
+   ,      (6, 6)
+   ,      (6, 17)
+   ,      (6, 18)
+   ,      (7, 1)
+   ,      (7, 4)
+   ,      (7, 7)
+   ,      (7, 10)
+   ,      (7, 13)
+   ,      (8, 17)
+   ,      (9, 18);
 
 # This is the select query used to get information about the database 
 SELECT pkl.parking_lot_id as id, pkl.description as desc, avg(lc.rating) as average

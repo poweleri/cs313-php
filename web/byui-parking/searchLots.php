@@ -6,6 +6,13 @@
 <html>
 <head>
 	<title>BYU-I Parking Lots</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 	<?php require 'header.php'; ?>
@@ -31,7 +38,7 @@
 			$statement = NULL;
 			if (isset($_POST["buildings"])){
 				$parkinglotQuery = 'SELECT pkl.parking_lot_id as id, pkl.description as desc, pkl.conditions as cond, avg(lc.rating) as average
-									FROM parking_lot pkl INNER JOIN lot_comment lc ON pkl.parking_lot_id = lc.parking_lot_id
+									FROM parking_lot pkl LEFT JOIN lot_comment lc ON pkl.parking_lot_id = lc.parking_lot_id
 	                    			INNER JOIN parking_lot_building_join pklbj ON pklbj.parking_lot_id = pkl.parking_lot_id
 	                         			  AND  pklbj.building_id IN :buildings
 									GROUP BY id;';
