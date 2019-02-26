@@ -39,7 +39,7 @@
 		} 
 	?>
 	<div>
-		<form method="POST" action="createUser.php" method="POST" >
+		<form method="POST" action="signUp.php" method="POST" >
 			Username:<input type="text" name="username"><br>
 			Password:<input type="password" name="password"><br>
 			Confirm Password:<input type="password" name="confirm"><br>
