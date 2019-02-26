@@ -47,8 +47,8 @@
 			?>
 			<div>
 				<form action="addComment.php" method="POST">
-					<input type="textbox" name="note">
-					<input type="hidden" name="returnPage" value=<?php echo basename($_SERVER['PHP_SELF']); ?>>
+					<textarea name="note" rows="5" cols="100"></textarea><br>
+					<input type="hidden" name="returnPage" value=<?php echo basename($_SERVER['PHP_SELF']) . "?lot=" . $lot_id; ?>>
 					<input type="hidden" name="lot_id" value=<?php echo $lot_id; ?>>
 					<input type="submit" value="Add Review">
 				</form>
