@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	unset($_SESSION['usr_id'], $_SESSEION['username']);
+	session_unset();
 	header('Location: signIn.php');
 	die();
 ?>
