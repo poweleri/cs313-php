@@ -118,8 +118,8 @@ INSERT INTO parking_lot_building_join (parking_lot_id, building_id)
    ,      (9, 18);
 
 # This is the select query used to get information about the database 
-SELECT pkl.parking_lot_id as id, pkl.description as desc, avg(lc.rating) as average
-FROM parking_lot pkl INNER JOIN lot_comment lc ON pkl.parking_lot_id = lc.parking_lot_id
+SELECT pkl.parking_lot_id as id, pkl.description as desc, COALESCE(NULLIF(avg(lc.rating), NULL), '0') as average
+FROM parking_lot pkl LEFT JOIN lot_comment lc ON pkl.parking_lot_id = lc.parking_lot_id
                      INNER JOIN parking_lot_building_join pklbj ON pklbj.parking_lot_id = pkl.parking_lot_id
                            AND  pklbj.building_id IN (1)
 GROUP BY id;

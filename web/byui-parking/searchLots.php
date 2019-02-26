@@ -37,7 +37,8 @@
 		<?php
 			$statement = NULL;
 			if (isset($_POST["buildings"])){
-				$parkinglotQuery = 'SELECT pkl.parking_lot_id as id, pkl.description as desc, pkl.conditions as cond, avg(lc.rating) as average
+				$parkinglotQuery = 'SELECT pkl.parking_lot_id as id, pkl.description as desc
+								  , pkl.conditions as cond, COALESCE(NULLIF(avg(lc.rating), NULL), \'0\') as average
 									FROM parking_lot pkl LEFT JOIN lot_comment lc ON pkl.parking_lot_id = lc.parking_lot_id
 	                    			INNER JOIN parking_lot_building_join pklbj ON pklbj.parking_lot_id = pkl.parking_lot_id
 	                         			  AND  pklbj.building_id IN :buildings
@@ -48,7 +49,8 @@
 				$statement->execute();
 
 			} else {
-				$parkinglotQuery = 'SELECT pkl.parking_lot_id as id, pkl.description as desc, pkl.conditions as cond, avg(lc.rating) as average
+				$parkinglotQuery = 'SELECT pkl.parking_lot_id as id, pkl.description as desc
+								  , pkl.conditions as cond, COALESCE(NULLIF(avg(lc.rating), NULL), \'0\') as average
 									FROM parking_lot pkl INNER JOIN lot_comment lc ON pkl.parking_lot_id = lc.parking_lot_id
 									GROUP BY id;';
 				$statement = $db->query($parkinglotQuery);
