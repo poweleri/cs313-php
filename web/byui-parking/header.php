@@ -6,6 +6,7 @@
 	<div class="row">
 		<?php
 			echo "<div class=\"col\"><a href=\"searchLots.php\">Home</a></div>";
+			echo "<div class=\"col\">BYU-Idaho Parking Reviews</div>";
 			echo "<div class=\"col\">";
 			if (isset($_SESSION["username"])){
 				$user = $_SESSION["username"]; 

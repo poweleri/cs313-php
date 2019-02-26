@@ -16,7 +16,7 @@
 </head>
 <body>
 	<?php require 'header.php'; ?>
-	<div>
+	<div class="fluid-container">
 		<h2>Buildings</h2>
 		<form action="searchLots.php" method="GET">
 			<?php 
@@ -32,7 +32,7 @@
 			<input type="submit" value="Update List">
 		</form>
 	</div>
-	<div>
+	<div class="fluid-container">
 		<h2>Lots</h2>
 		<?php
 			$statement = NULL;
@@ -61,7 +61,7 @@
 				$desc = $row['desc'];
 				$cond = $row['cond'];
 				$avg  = number_format($row['average'], 2);
-				echo "<div>
+				echo "<div class=\"row\">
 						<p><a href=\"lotComments.php?lot=$id\">$desc</a><br>
 						   Score: $avg<br>
 						   Conditions: $cond</p>

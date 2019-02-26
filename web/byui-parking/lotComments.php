@@ -19,7 +19,7 @@
 </head>
 <body>
 	<?php require 'header.php'; ?>
-	<div>
+	<div class="fluid-container">
 		<h2><?php echo $lot_info['description']; ?></h2>
 		<h3>Conditions: <?php echo $lot_info['conditions']; ?></h3>
 		<p>Close Buildings: </p>
@@ -36,7 +36,7 @@
 				}
 			?>
 		</ul>
-		<div>
+		<div class="fluid-container">
 			<h2>User Ratings</h2>
 			<?php
 				$noteQuery = "SELECT lc.lot_comment_info as note, lc.rating, u.username 
@@ -46,10 +46,10 @@
 					$note = $row['note'];
 					$rating = $row['rating'];
 					$username = $row['username'];
-					echo "<div><p><textarea rows=\"5\" cols=\"100\" disabled>$note</textarea><br>Rating: $rating<br>User: $username</p></div>";
+					echo "<div class=\"row\"><p><textarea rows=\"5\" cols=\"100\" disabled>$note</textarea><br>Rating: $rating<br>User: $username</p></div>";
 				}		  	  					  
 			?>
-			<div>
+			<div class="row">
 				<form action="addComment.php" method="POST">
 					<textarea name="note" rows="5" cols="100"></textarea><br>
 					1: <input type="radio" name="rating" value="1">

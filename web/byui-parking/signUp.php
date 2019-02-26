@@ -39,20 +39,21 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<?php 
-		require 'header.php'; 
-		if($err){ 
-			echo "<p><b>Error:</b> Passwords did not match or missing field</p>"; 
-		} 
-	?>
-	<div>
-		<form method="POST" action="signUp.php" method="POST" >
-			Username:<input type="text" name="username"><br>
-			Password:<input type="password" name="password"><br>
-			Confirm Password:<input type="password" name="confirm"><br>
-			<input type="submit">
-		</form>
+	<div class="fluid-container">
+		<?php 
+			require 'header.php'; 
+			if($err){ 
+				echo "<p><b>Error:</b> Passwords did not match or missing field</p>"; 
+			} 
+		?>
+		<div class="row">
+			<form method="POST" action="signUp.php" method="POST" >
+				Username:<input type="text" name="username"><br>
+				Password:<input type="password" name="password"><br>
+				Confirm Password:<input type="password" name="confirm"><br>
+				<input type="submit">
+			</form>
+		</div>
 	</div>
-
 </body>
 </html>
