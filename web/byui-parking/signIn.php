@@ -43,8 +43,7 @@
 	<?php require 'header.php'; ?>
 	<div class="container">
 		<div class="row">
-			<p>Sign in:<br></p>
-			<?php if($badLogin){ echo "<p><b>Error:</b> Either Username or Password is incorrect<br></p>";} ?>
+			<?php if($badLogin){ echo "<div><b>Error:</b> Either Username or Password is incorrect<br></div>";} ?>
 			<form method="POST" action="signIn.php" >
 				Username:<input type="text" name="username"><br>
 				Password:<input type="password" name="password"><br>
