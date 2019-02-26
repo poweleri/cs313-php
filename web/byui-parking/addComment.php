@@ -3,7 +3,7 @@
 	require 'dbConnection.php';
 	$db = get_db();
 
-	if (not isset($_SESSION['user'])){
+	if (!isset($_SESSION['user'])){
 		header("Location: signIn.html");
 		die();
 	}
