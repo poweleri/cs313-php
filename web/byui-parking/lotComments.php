@@ -3,7 +3,7 @@
 	$db = get_db();
 	$lot_id = $_GET['lot'];
 	$temp = $db->query("SELECT conditions, description FROM parking_lot WHERE parking_lot_id = $lot_id");
-	$lot_info = $temp->(PDO::FETCH_ASSOC);
+	$lot_info = $temp->fetch(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html>
