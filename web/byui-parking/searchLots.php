@@ -51,8 +51,7 @@
 			} else {
 				$parkinglotQuery = 'SELECT pkl.parking_lot_id as id, pkl.description as desc
 								  , pkl.conditions as cond, COALESCE(NULLIF(avg(lc.rating), NULL), \'0\') as average
-									FROM parking_lot pkl INNER JOIN lot_comment lc ON pkl.parking_lot_id = lc.parking_lot_id
-														 AND pkl.parking_lot_id = pkl.parking_lot_id
+									FROM parking_lot pkl LEFT JOIN lot_comment lc ON pkl.parking_lot_id = lc.parking_lot_id
 									GROUP BY id;';
 				$statement = $db->query($parkinglotQuery);
 				

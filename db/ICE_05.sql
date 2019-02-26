@@ -1,13 +1,19 @@
 CREATE TABLE actor (
    actor_id    SERIAL        PRIMARY KEY
-,  fname       VARCHAR(50)
-,  lname       VARCHAR(50)
+,  fname       VARCHAR(50)   NOT NULL
+,  lname       VARCHAR(50)   NOT NULL
+,  mname       VARCHAR(50)
+);
+
+CREATE TABLE genre (
+   genre_id
 );
 
 CREATE TABLE movie (
    movie_id     SERIAL        PRIMARY KEY
 ,  title        VARCHAR(100)  NOT NULL
-,  release_date DATE            
+,  year         SMALLINT
+,  genre_id     INT           NOT NULL
 );
 
 CREATE TABLE actor_movie_join (
