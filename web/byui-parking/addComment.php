@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html>
 <?php
 	require 'dbConnection.php';
 	$db = get_db();
@@ -9,7 +8,7 @@
 		header("Location: signIn.html");
 		die();
 	}
-	
+
 	try {
 		$query = "INSERT INTO lot_comment (lot_comment_info, rating, usr_id, parking_lot_id)
 					VALUES (:note, :rating, :usr_id, :lot_id)";
@@ -26,4 +25,3 @@
 	header("Location: $_POST['returnPage']");
 	die();
 ?>
-</html>
