@@ -2,7 +2,8 @@
 	require 'dbConnection.php';
 	$db = get_db();
 	$lot_id = $_GET['lot'];
-	$lot_info = $db->query("SELECT conditions, description FROM parking_lot WHERE parking_lot_id = $lot_id");
+	$temp = $db->query("SELECT conditions, description FROM parking_lot WHERE parking_lot_id = $lot_id");
+	$lot_info = $temp->(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html>
