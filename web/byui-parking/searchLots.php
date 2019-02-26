@@ -38,7 +38,7 @@
 				$buildings = "(" . implode($_POST["buildings"], ", ") . ")";
 				$statement = $db->prepare($parkingLotQuery);
 				$statement->bindValue(":buildings", $buildings);
-				$statment->execute();
+				$statement->execute();
 
 			} else {
 				$parkinglotQuery = 'SELECT pkl.parking_lot_id as id, pkl.description as desc, pkl.conditions as cond, avg(lc.rating) as average

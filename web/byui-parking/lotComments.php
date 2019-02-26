@@ -21,7 +21,7 @@
 				$query = "SELECT b.building_id, b.description 
 						  FROM building b INNER JOIN parking_lot_building_join pklbj ON b.building_id=pklbj.building_id
 						  				  INNER JOIN parking_lot ON pklbj.parking_lot_id=$lot_id";
-				$statement = $db->execute($query);
+				$statement = $db->query($query);
 				while($row = $statement->fetch(PDO::FETCH_ASSOC)){
 					$desc = $row['description'];
 					$id = $row['building_id'];
@@ -35,7 +35,7 @@
 				$noteQuery = "SELECT lc.lot_comment_info as note, lc.rating, u.username 
 							  FROM lot_comment lc INNER JOIN usr u ON lc.usr_id=lc.usr_id
 						  	  					  AND lc.parking_lot_id=$lot_id";
-				$statement = $db->execute($query);
+				$statement = $db->query($query);
 				while($row = $statement->fetch(PDO::FETCH_ASSOC)){
 					$note = $row['note'];
 					$rating = $row['rating'];
