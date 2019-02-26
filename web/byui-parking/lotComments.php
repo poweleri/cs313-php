@@ -48,6 +48,11 @@
 			<div>
 				<form action="addComment.php" method="POST">
 					<textarea name="note" rows="5" cols="100"></textarea><br>
+					1: <input type="radio" name="rating" value="1">
+					2: <input type="radio" name="rating" value="2">
+					3: <input type="radio" name="rating" value="3">
+					4: <input type="radio" name="rating" value="4">
+					5: <input type="radio" name="rating" value="5" checked="true"><br>
 					<input type="hidden" name="returnPage" value=<?php echo basename($_SERVER['PHP_SELF']) . "?lot=" . $lot_id; ?>>
 					<input type="hidden" name="lot_id" value=<?php echo $lot_id; ?>>
 					<input type="submit" value="Add Review">
